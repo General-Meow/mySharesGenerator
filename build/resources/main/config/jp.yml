@@ -1,0 +1,4 @@
+profile: jp
+port: 5553
+applicationContext: /sharesJP
+generate: /sharesJP/generate

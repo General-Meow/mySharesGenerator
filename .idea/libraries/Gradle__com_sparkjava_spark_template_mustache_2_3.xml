@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sparkjava:spark-template-mustache:2.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-template-mustache/2.3/c37139726780fcb6c63e46a650f92b6c76a730f9/spark-template-mustache-2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-template-mustache/2.3/13df7317de74340eeef4fe3a4c495b6fde937f1/spark-template-mustache-2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

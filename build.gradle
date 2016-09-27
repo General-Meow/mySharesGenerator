@@ -1,0 +1,43 @@
+group 'com.paulhoang'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+apply plugin: 'gradle-one-jar'
+
+mainClassName = "com.paulhoang.Application"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//required for one jar
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+
+task oneJarBuildTask(type: OneJar) {
+    mainClass = 'com.paulhoang.Application'
+    archiveName = 'sharesGenerator.jar'
+}
+
+dependencies {
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.sparkjava:spark-core:2.3'
+    compile 'com.sparkjava:spark-template-mustache:2.3'
+    compile 'com.netflix.hystrix:hystrix-core:1.4.21'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
+    compile 'org.yaml:snakeyaml:1.16'
+    compile 'com.google.code.gson:gson:2.7'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
