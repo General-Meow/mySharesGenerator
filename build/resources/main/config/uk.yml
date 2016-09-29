@@ -1,4 +1,0 @@
-profile: uk
-port: 5551
-applicationContext: /sharesUK
-generate: /sharesUK/generate
