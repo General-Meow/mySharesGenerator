@@ -32,7 +32,7 @@ public class PostThread extends Thread {
                 LocalDateTime now = LocalDateTime.now();
                 if (now.isAfter(postData.getStartTime()) && now.isBefore(postData.getEndTime())) {
                     LOG.info("Running thread: {}", Thread.currentThread().getName());
-                    sendData(Thread.currentThread().getName(), now);
+                    sendData("derp inc", 1.0d);
                     executed = true;
                 }
 
@@ -46,7 +46,7 @@ public class PostThread extends Thread {
     }
 
 
-    private void sendData(String name, LocalDateTime now){
-        new PostGeneratedDataCommand(HystrixCommandGroupKey.Factory.asKey("group"), name, now).execute();
+    private void sendData(String name, double price){
+        new PostGeneratedDataCommand(HystrixCommandGroupKey.Factory.asKey("group"), name, price).execute();
     }
 }

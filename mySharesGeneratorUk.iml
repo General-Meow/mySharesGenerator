@@ -17,7 +17,6 @@
     <orderEntry type="library" name="Gradle: com.squareup.okhttp:okhttp:2.5.0" level="project" />
     <orderEntry type="library" name="Gradle: com.sparkjava:spark-core:2.3" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.6.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.12" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.3.2.v20150730" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.2.v20150730" level="project" />
@@ -33,8 +32,6 @@
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.3.2.v20150730" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.3.2.v20150730" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-security:9.3.2.v20150730" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.11" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: com.sparkjava:spark-template-mustache:2.3" level="project" />
     <orderEntry type="library" name="Gradle: com.github.spullara.mustache.java:compiler:0.9.0" level="project" />
     <orderEntry type="library" name="Gradle: com.netflix.hystrix:hystrix-core:1.4.21" level="project" />
@@ -42,9 +39,62 @@
     <orderEntry type="library" name="Gradle: io.reactivex:rxjava:1.0.14" level="project" />
     <orderEntry type="library" name="Gradle: commons-configuration:commons-configuration:1.8" level="project" />
     <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
-    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.3" level="project" />
     <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.16" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.12" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: au.com.dius:pact-jvm-consumer_2.11:3.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: au.com.dius:pact-jvm-consumer-junit_2.11:3.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-all:1.10.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.scala-lang:scala-library:2.11.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.scala-lang:scala-compiler:2.11.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.typesafe.scala-logging:scala-logging_2.11:3.4.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: au.com.dius:pact-jvm-model:3.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: au.com.dius:pact-jvm-matchers_2.11:3.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.codehaus.groovy:groovy-all:2.4.7:indy" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.googlecode.java-diff-utils:diffutils:1.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: dk.brics.automaton:automaton:1.11-8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.mifmif:generex:1.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.databinder:unfiltered-netty-server_2.11:0.8.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.databinder.dispatch:dispatch-core_2.11:0.11.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.json:json:20160212" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.commons:commons-lang3:3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:guava:19.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.scala-lang:scala-reflect:2.11.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.scala-lang.modules:scala-xml_2.11:1.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-handler:4.0.40.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.zafarkhaja:java-semver:0.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.codehaus.groovy.modules.http-builder:http-builder:0.7.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.gatling:jsonpath_2.11:0.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.databinder:unfiltered-netty_2.11:0.8.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.databinder:unfiltered-util_2.11:0.8.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.ning:async-http-client:1.9.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-buffer:4.0.40.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-transport:4.0.40.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-codec:4.0.40.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.sf.json-lib:json-lib:2.3:jdk15" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.sourceforge.nekohtml:nekohtml:1.9.16" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: xml-resolver:xml-resolver:1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.databinder:unfiltered_2.11:0.8.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-codec-http:4.0.24.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty:3.10.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-common:4.0.40.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-beanutils:commons-beanutils:1.8.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: xerces:xercesImpl:2.9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: xml-apis:xml-apis:1.3.04" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:slf4j-api:1.7.21" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.1" level="project" />
   </component>
 </module>

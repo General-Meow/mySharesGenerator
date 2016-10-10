@@ -3,6 +3,7 @@ package com.paulhoang.commands;
 import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.paulhoang.data.Data;
 import com.squareup.okhttp.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,13 +21,13 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private String name;
-    private LocalDateTime now;
+    private double price;
 
 
-    public PostGeneratedDataCommand(final HystrixCommandGroupKey group, String name, LocalDateTime now) {
+    public PostGeneratedDataCommand(final HystrixCommandGroupKey group, String name, double price) {
         super(group);
         this.name = name;
-        this.now = now;
+        this.price = price;
     }
 
     //TODO overload the constructor to take a json payload which the run method will use to post
@@ -35,7 +36,7 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
     protected String run()  {
         final OkHttpClient restfulClient = new OkHttpClient();
 
-        Data data = new Data(this.name, this.now);
+        Data data = new Data(this.name, this.price);
         RequestBody body = RequestBody.create(JSON, gson.toJson(data));
         LOG.info("About to post");
         Request request = new Request.Builder()
@@ -59,29 +60,4 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
 //        return "Failed - got fallback";
 //    }
 
-    class Data{
-        String name;
-        LocalDateTime now;
-
-        public Data(String name, LocalDateTime now) {
-            this.name = name;
-            this.now = now;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public LocalDateTime getNow() {
-            return now;
-        }
-
-        public void setNow(LocalDateTime now) {
-            this.now = now;
-        }
-    }
 }

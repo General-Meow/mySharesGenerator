@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.databinder.dispatch:dispatch-core_2.11:0.11.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.databinder.dispatch/dispatch-core_2.11/0.11.3/f03187b23a4197d9ccb539f95c13db51adda010/dispatch-core_2.11-0.11.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.databinder.dispatch/dispatch-core_2.11/0.11.3/cdf964d6383c0132db9cd39683fe456aced178cd/dispatch-core_2.11-0.11.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

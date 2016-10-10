@@ -1,0 +1,32 @@
+{
+    "provider": {
+        "name": "SharesCollector"
+    },
+    "consumer": {
+        "name": "SharesGenerator"
+    },
+    "interactions": [
+        {
+            "description": "a request posting share data",
+            "request": {
+                "method": "POST",
+                "path": "/collect"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "text/html;charset=utf-8"
+                },
+                "body": "hello"
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "2.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.3.0"
+        }
+    }
+}

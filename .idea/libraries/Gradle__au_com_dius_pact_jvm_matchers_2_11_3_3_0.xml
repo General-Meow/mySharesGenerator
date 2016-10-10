@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: au.com.dius:pact-jvm-matchers_2.11:3.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/au.com.dius/pact-jvm-matchers_2.11/3.3.0/3e9d4b01f6f12a3133000f7184bbef504d8a26e1/pact-jvm-matchers_2.11-3.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/au.com.dius/pact-jvm-matchers_2.11/3.3.0/2fb507b822820f0d8403cde3e665e3ee39943c16/pact-jvm-matchers_2.11-3.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
