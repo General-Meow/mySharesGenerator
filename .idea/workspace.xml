@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ffa49b2-8407-4483-940a-ec952730d931" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" afterPath="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" />
     </list>
     <ignored path="mySharesGeneratorUk.iws" />
@@ -805,8 +804,8 @@
       <file leaf-file-name="generate.mustache" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6818182">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.29220778">
+              <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -2379,7 +2378,7 @@
       <workItem from="1475244606651" duration="15980000" />
       <workItem from="1475962394697" duration="141000" />
       <workItem from="1475962564836" duration="903000" />
-      <workItem from="1476099091104" duration="3152000" />
+      <workItem from="1476099091104" duration="3841000" />
     </task>
     <servers />
   </component>
@@ -2416,7 +2415,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76597000" />
+    <option name="totallyTimeSpent" value="77286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
@@ -3242,8 +3241,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6818182">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.29220778">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding />
         </state>
       </provider>
