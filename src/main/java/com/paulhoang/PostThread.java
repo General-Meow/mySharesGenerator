@@ -18,6 +18,10 @@ public class PostThread extends Thread {
 
     private List<PostData> postDataList;
 
+    /**
+     * Provide a collection to iterator over
+     * @param postDataList
+     */
     public PostThread(final List<PostData> postDataList)
     {
         this.postDataList = postDataList;
@@ -25,6 +29,7 @@ public class PostThread extends Thread {
 
     @Override
     public void run() {
+        Application.runningGeneration = true;
         for(final PostData postData : postDataList) {
             LOG.info("posting data from {} to {}", postData.getStartTime(), postData.getEndTime());
             boolean executed = false;
@@ -43,6 +48,7 @@ public class PostThread extends Thread {
             }
             while (!executed);
         }
+        Application.runningGeneration = false;
     }
 
 

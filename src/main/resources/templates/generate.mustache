@@ -14,11 +14,11 @@
 
     <header>
         <h1>Shares Generator {{country}}</h1>
-        <h3>Generator status: {{generatorStatus}}</h3>
+        <h3>Generator status: derp</h3>
     </header>
 
     <div class="content">
-        <form class="pure-form pure-form-aligned" action="{{generate}}" method="post">
+        <form class="pure-form pure-form-aligned" action="{{generateAction}}" method="post">
             <fieldset>
                 <div class="pure-control-group">
                     <label for="duration">Duration in minutes</label>
@@ -72,10 +72,26 @@
                     </select>
                 </div>
 
-                <button type="submit" class="pure-button pure-button-primary"{{#disabledGenerator}}disabled{{/disabledGenerator}}>Generate Shares</button>
+                <button type="submit" class="pure-button pure-button-primary">Generate Shares</button>
 
             </fieldset>
         </form>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $.get('./isRunning', function(isRunning){
+            console.log('is running', isRunning);
+            var running = $.parseJSON(isRunning)
+            if(running)
+            {
+                $('h3').text('Generator status: Running');
+                $('button').attr('disabled', 'disabled');
+            } else {
+                $('h3').text('Generator status: Not Running');
+                $('button').removeAttr('disabled');
+            }
+        });
+    </script>
 </body>
 </html>

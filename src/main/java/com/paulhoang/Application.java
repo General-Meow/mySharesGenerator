@@ -1,34 +1,23 @@
 package com.paulhoang;
 
 import com.netflix.hystrix.HystrixCommandGroupKey;
-import com.netflix.hystrix.HystrixThreadPoolProperties;
-import com.paulhoang.commands.PostGeneratedDataCommand;
 import com.paulhoang.config.ApplicationConfiguration;
 import com.paulhoang.data.PostData;
 import com.paulhoang.hystrix.HyxtrixMetricsStream;
-import com.squareup.okhttp.*;
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import static spark.Spark.*;
 
@@ -49,7 +38,7 @@ public class Application {
     //point to http://localhost:5551/sharesUK/hystrix.stream
     private static final MustacheTemplateEngine mustacheTemplateEngine = new MustacheTemplateEngine();
 
-    private static boolean runningGeneration;
+    public static boolean runningGeneration = false;
 
     public static void main(final String[] args) {
 
@@ -70,13 +59,12 @@ public class Application {
         get(appConfig.getApplicationContext(), (rq, rs) -> new ModelAndView(homePageMap, "home.mustache"), mustacheTemplateEngine);
 
         final Map<String, Object> generatePageMap = new HashMap<>();
-        generatePageMap.put("disabledGenerator", !canRunGenerator());
         generatePageMap.put("country", appConfig.getProfile());
-        generatePageMap.put("generate", appConfig.getGenerate());
+        generatePageMap.put("generateAction", appConfig.getGenerate());
         generatePageMap.put("generatorStatus", runningGeneration ? "Running" : "Not Running");
 
         get(appConfig.getGenerate(), (rq, rs) -> new ModelAndView(generatePageMap, "generate.mustache"), mustacheTemplateEngine);
-        get(appConfig.getApplicationContext() + "/canGenerate", (rq, rs) -> canRunGenerator());
+        get(appConfig.getApplicationContext() + "/isRunning", (rq, rs) -> isRunning());
 
         post(appConfig.getGenerate(), (rq, rs) -> {
 
@@ -131,8 +119,8 @@ public class Application {
     }
 
 
-    private static boolean canRunGenerator() {
-        return !runningGeneration;
+    private static boolean isRunning() {
+        return runningGeneration;
     }
 
     private static List<PostData> createPostData(final int loopDuration, final int updatesPerSec) {

@@ -30,6 +30,7 @@ import com.netflix.hystrix.util.HystrixRollingNumberEvent;
  * <p>
  * Polling can be stopped/started. Use shutdown() to permanently shutdown the poller.
  */
+@java.lang.SuppressWarnings("*")
 public class HystrixMetricsPoller {
 
     static final Logger logger = LoggerFactory.getLogger(HystrixMetricsPoller.class);

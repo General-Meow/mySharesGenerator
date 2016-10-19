@@ -49,15 +49,14 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
             LOG.info("Got response {}", bodyresp);
             return bodyresp;
         } catch (IOException e) {
-            System.out.println("io exception...");
-            e.printStackTrace();
+            LOG.error("io exception...", e);
         }
         return "failed";
     }
 
-//    @Override
-//    protected String getFallback() {
-//        return "Failed - got fallback";
-//    }
+    @Override
+    protected String getFallback() {
+        return "Failed - got fallback";
+    }
 
 }
