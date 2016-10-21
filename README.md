@@ -1,1 +1,1 @@
-# mySharesGeneratorUk
+# mySharesGenerator

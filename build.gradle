@@ -92,8 +92,8 @@ pact {
 
 sonarqube {
     properties {
-        property "sonar.projectName", "mySharesGeneratorUk"
-        property "sonar.projectKey", "mySharesGeneratorUk"
+        property "sonar.projectName", "mySharesGenerator"
+        property "sonar.projectKey", "mySharesGenerator"
         property "sonar.host.url", "http://192.168.1.51:9000/"
         property "sonar.java.coveragePlugin", "jacoco"
 //        property "sonar.jdbc.url", "jdbc:mysql://10.42.58.229:3306/sonar"
