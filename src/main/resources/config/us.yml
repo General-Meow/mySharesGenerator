@@ -2,3 +2,4 @@ profile: us
 port: 5552
 applicationContext: /sharesUS
 generate: /sharesUS/generate
+generateAdvanced: /sharesUS/generateAdvanced

@@ -9,6 +9,7 @@ public class ApplicationConfiguration {
     private int port;
     private String applicationContext;
     private String generate;
+    private String generateAdvanced;
 
     public String getProfile() {
         return profile;
@@ -40,5 +41,13 @@ public class ApplicationConfiguration {
 
     public void setGenerate(String generate) {
         this.generate = generate;
+    }
+
+    public String getGenerateAdvanced() {
+        return generateAdvanced;
+    }
+
+    public void setGenerateAdvanced(String generateAdvanced) {
+        this.generateAdvanced = generateAdvanced;
     }
 }

@@ -3,6 +3,7 @@ package com.paulhoang;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.paulhoang.commands.PostGeneratedDataCommand;
 import com.paulhoang.data.PostData;
+import com.paulhoang.data.ShareData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +38,7 @@ public class PostThread extends Thread {
                 LocalDateTime now = LocalDateTime.now();
                 if (now.isAfter(postData.getStartTime()) && now.isBefore(postData.getEndTime())) {
                     LOG.info("Running thread: {}", Thread.currentThread().getName());
-                    sendData("derp inc", 1.0d);
+                    sendData(postData);
                     executed = true;
                 }
 
@@ -52,7 +53,7 @@ public class PostThread extends Thread {
     }
 
 
-    private void sendData(String name, double price){
-        new PostGeneratedDataCommand(HystrixCommandGroupKey.Factory.asKey("group"), name, price).execute();
+    private void sendData(PostData postData){
+        new PostGeneratedDataCommand(HystrixCommandGroupKey.Factory.asKey("group"), postData.getCompanySharePrices()).execute();
     }
 }

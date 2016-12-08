@@ -1,23 +1,32 @@
 package com.paulhoang;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.paulhoang.config.ApplicationConfiguration;
+import com.paulhoang.data.CompanyData;
 import com.paulhoang.data.PostData;
+import com.paulhoang.data.ShareData;
 import com.paulhoang.hystrix.HyxtrixMetricsStream;
 import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 import spark.ModelAndView;
+import spark.Request;
+import spark.Response;
 import spark.template.mustache.MustacheTemplateEngine;
 
+import java.io.FileReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static spark.Spark.*;
 
@@ -30,7 +39,9 @@ public class Application {
 
     private static HystrixCommandGroupKey commandGroupKey;
     private static ApplicationConfiguration appConfig;
-
+    private static List<CompanyData> companyData;
+    private static Map<String, BigDecimal> lastCompanyPrices;
+    private static final Type REVIEW_TYPE = new TypeToken<List<CompanyData>>() { }.getType();
 
     // home.mustache file is in resources/templates directory
     //to get hystrix info go to: ~/Dropbox/dev/MySharesReborn/Hystrix/hystrix-dashboard
@@ -40,7 +51,7 @@ public class Application {
 
     public static boolean runningGeneration = false;
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
 
         LOG.info("Starting app... arguments: {}", ArrayUtils.toString(args));
         appConfig = loadConfiguration(args);
@@ -64,33 +75,50 @@ public class Application {
         generatePageMap.put("generatorStatus", runningGeneration ? "Running" : "Not Running");
 
         get(appConfig.getGenerate(), (rq, rs) -> new ModelAndView(generatePageMap, "generate.mustache"), mustacheTemplateEngine);
+        post(appConfig.getGenerate(), (rq, rs) -> handleGenerateRequest(rq, rs));
+
+        final Map<String, Object> generateAdvancedPageMap = new HashMap<>();
+        generateAdvancedPageMap.put("country", appConfig.getProfile());
+        generateAdvancedPageMap.put("generateAdvancedAction", appConfig.getGenerateAdvanced());
+        generateAdvancedPageMap.put("generatorStatus", runningGeneration ? "Running" : "Not Running");
+        get(appConfig.getGenerateAdvanced(), (rq, rs) -> new ModelAndView(generatePageMap, "generate-advanced.mustache"), mustacheTemplateEngine);
+        post(appConfig.getGenerate(), (rq, rs) -> handleGenerateRequest(rq, rs));
+
         get(appConfig.getApplicationContext() + "/isRunning", (rq, rs) -> isRunning());
 
-        post(appConfig.getGenerate(), (rq, rs) -> {
-
-                    LOG.info(rq.attributes().toString());
-                    LOG.info(rq.params().toString());
-                    int durationInMinutes = 0;
-                    int updatesPerSec = 0;
-                    int concurrentThreads = 0;
-                    try{
-                        durationInMinutes = Integer.parseInt(rq.queryParams("duration"));
-                        updatesPerSec = Integer.parseInt(rq.queryParams("updatesPerSec"));
-                        concurrentThreads = Integer.parseInt(rq.queryParams("concurrentThreads"));
-                    }
-                    catch (final NumberFormatException nfe)
-                    {
-                        LOG.info("Error in parsing rq param {}", nfe);
-                    }
-
-                    List<PostData> postDataList = createPostData(durationInMinutes, updatesPerSec);
-                    createAndStartThreads(postDataList, concurrentThreads);
-                    rs.redirect(appConfig.getApplicationContext());
-                    return null;
-                }
-        );
+        companyData = getCompanyDataFromFile();
+        lastCompanyPrices = generateLastCompanyPrices(companyData);
 
         LOG.info("Access the application on: localhost:{}{}", appConfig.getPort(), appConfig.getApplicationContext());
+    }
+
+    static Object handleGenerateRequest(Request rq, Response rs) {
+        LOG.info(rq.attributes().toString());
+        LOG.info(rq.params().toString());
+
+        int durationInMinutes = 1;
+        int updatesPerSec = 1;
+        int concurrentThreads = 1;
+        try{
+            if(StringUtils.isNotEmpty(rq.queryParams("duration"))) {
+                durationInMinutes = Integer.parseInt(rq.queryParams("duration"));
+            }
+            if(StringUtils.isNotEmpty(rq.queryParams("updatesPerSec"))){
+                updatesPerSec = Integer.parseInt(rq.queryParams("updatesPerSec"));
+            }
+            if(StringUtils.isNotEmpty(rq.queryParams("concurrentThreads"))) {
+                concurrentThreads = Integer.parseInt(rq.queryParams("concurrentThreads"));
+            }
+        }
+        catch (final NumberFormatException nfe)
+        {
+            LOG.info("Error in parsing rq param {}", nfe);
+        }
+
+        List<PostData> postDataList = createPostData(durationInMinutes, updatesPerSec);
+        createAndStartThreads(postDataList, concurrentThreads);
+        rs.redirect(appConfig.getApplicationContext());
+        return null;
     }
 
     private static void createAndStartThreads(final List<PostData> postDataList, final int concurrentThreads) {
@@ -135,7 +163,8 @@ public class Application {
             while(i <= updatesPerSec) {
                 final LocalDateTime threadEndTime = startTime.plus(i * (1000L / updatesPerSec), ChronoUnit.MILLIS);
                 LOG.info("creating thread start time {} end time {}", startTime, threadEndTime);
-                postDataList.add(new PostData(startTime, threadEndTime));
+                final List<ShareData> shareDataList = generateShareDataForCompanies();
+                postDataList.add(new PostData(startTime, threadEndTime, shareDataList));
                 i++;
             }
             startTime = startTime.plus(1L, ChronoUnit.SECONDS);
@@ -144,4 +173,36 @@ public class Application {
         return postDataList;
     }
 
+    private static Map<String, BigDecimal> generateLastCompanyPrices(List<CompanyData> companies){
+        Map<String, BigDecimal> lastCompanyPrices = new HashMap<>();
+        for(final CompanyData company : companies)
+        {
+            lastCompanyPrices.put(company.getName(), company.getStartingPrice());
+        }
+        return lastCompanyPrices;
+    }
+
+    private static List<CompanyData> getCompanyDataFromFile() throws Exception{
+        List<CompanyData> data = new ArrayList<>();
+
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new InputStreamReader(Application.class.getClassLoader()
+                .getResourceAsStream("config/companies.json")));
+        data = gson.fromJson(reader, REVIEW_TYPE); // contains the whole reviews list
+        LOG.info("my {}", data);
+        return data;
+    }
+
+    private static List<ShareData> generateShareDataForCompanies(){
+        final List<ShareData> data = new ArrayList<>();
+
+        for(final CompanyData company : companyData)
+        {
+            LOG.info("data {} {} {}", company.getName(), company.getStartingPrice(), company.getTrend());
+            //final ShareData shareData = new ShareData();//lastCompanyPrices.get(company.getName()) + BigDecimal.ONE;
+            //data.add(shareData);
+        }
+
+        return data;
+    }
 }
