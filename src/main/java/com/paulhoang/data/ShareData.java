@@ -40,5 +40,12 @@ public class ShareData {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "ShareData{" +
+                "name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

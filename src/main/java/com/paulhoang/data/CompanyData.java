@@ -10,12 +10,12 @@ public class CompanyData {
     private String name;
     private BigDecimal startingPrice;
     private Trend trend;
-    private float randomness;
+    private float trendFlipChance;
 
-    public CompanyData(String name, Trend trend, float randomness) {
+    public CompanyData(String name, Trend trend, float trendFlipChance) {
         this.name = name;
         this.trend = trend;
-        this.randomness = randomness;
+        this.trendFlipChance = trendFlipChance;
     }
 
     public String getName() {
@@ -42,11 +42,21 @@ public class CompanyData {
         this.trend = trend;
     }
 
-    public float getRandomness() {
-        return randomness;
+    public float getTrendFlipChance() {
+        return trendFlipChance;
     }
 
-    public void setRandomness(float randomness) {
-        this.randomness = randomness;
+    public void setTrendFlipChance(float trendFlipChance) {
+        this.trendFlipChance = trendFlipChance;
+    }
+
+    @Override
+    public String toString() {
+        return "CompanyData{" +
+                "name='" + name + '\'' +
+                ", startingPrice=" + startingPrice +
+                ", trend=" + trend +
+                ", trendFlipChance=" + trendFlipChance +
+                '}';
     }
 }

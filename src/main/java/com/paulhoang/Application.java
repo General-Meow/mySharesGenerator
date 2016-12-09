@@ -8,6 +8,7 @@ import com.paulhoang.config.ApplicationConfiguration;
 import com.paulhoang.data.CompanyData;
 import com.paulhoang.data.PostData;
 import com.paulhoang.data.ShareData;
+import com.paulhoang.data.Trend;
 import com.paulhoang.hystrix.HyxtrixMetricsStream;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
@@ -19,11 +20,11 @@ import spark.Request;
 import spark.Response;
 import spark.template.mustache.MustacheTemplateEngine;
 
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -41,7 +42,7 @@ public class Application {
     private static ApplicationConfiguration appConfig;
     private static List<CompanyData> companyData;
     private static Map<String, BigDecimal> lastCompanyPrices;
-    private static final Type REVIEW_TYPE = new TypeToken<List<CompanyData>>() { }.getType();
+    private static final Type COMPANY_DATA_TYPE = new TypeToken<List<CompanyData>>() { }.getType();
 
     // home.mustache file is in resources/templates directory
     //to get hystrix info go to: ~/Dropbox/dev/MySharesReborn/Hystrix/hystrix-dashboard
@@ -183,14 +184,10 @@ public class Application {
     }
 
     private static List<CompanyData> getCompanyDataFromFile() throws Exception{
-        List<CompanyData> data = new ArrayList<>();
-
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new InputStreamReader(Application.class.getClassLoader()
                 .getResourceAsStream("config/companies.json")));
-        data = gson.fromJson(reader, REVIEW_TYPE); // contains the whole reviews list
-        LOG.info("my {}", data);
-        return data;
+        return gson.fromJson(reader, COMPANY_DATA_TYPE);
     }
 
     private static List<ShareData> generateShareDataForCompanies(){
@@ -198,11 +195,45 @@ public class Application {
 
         for(final CompanyData company : companyData)
         {
-            LOG.info("data {} {} {}", company.getName(), company.getStartingPrice(), company.getTrend());
-            //final ShareData shareData = new ShareData();//lastCompanyPrices.get(company.getName()) + BigDecimal.ONE;
-            //data.add(shareData);
+            BigDecimal percent = randomPercentage(0, 5);
+            percent = percent.add(BigDecimal.ONE);
+            flip(company);
+            BigDecimal newPrice;
+            if(Trend.UP.equals(company.getTrend())) {
+                newPrice = lastCompanyPrices.get(company.getName()).multiply(percent);
+            }else{
+                newPrice = lastCompanyPrices.get(company.getName()).divide(percent, 2, BigDecimal.ROUND_HALF_UP);
+            }
+            newPrice = newPrice.setScale(2, RoundingMode.HALF_UP);
+            LOG.info("Prices: {} {} {}", percent, company.getStartingPrice(), newPrice);
+            lastCompanyPrices.put(company.getName(), newPrice);
+            final ShareData shareData = new ShareData(company.getName(), company.getName() + appConfig.getApplicationContext(), newPrice);
+            data.add(shareData);
         }
 
         return data;
+    }
+
+    private static void flip(CompanyData companyData){
+        int number = getRandomNumberInRange(1, 100);
+        float flipNumber = number / 100.00f;
+        if(flipNumber <= companyData.getTrendFlipChance()){
+            if(Trend.UP.equals(companyData.getTrend())){
+                companyData.setTrend(Trend.DOWN);
+            }else{
+                companyData.setTrend(Trend.UP);
+            }
+        }
+    }
+
+    private static int getRandomNumberInRange(int min, int max) {
+        Random r = new Random();
+        return r.nextInt(max - min) + min;
+    }
+
+    private static BigDecimal randomPercentage(int min, int max) {
+        int number = getRandomNumberInRange(min, max);
+        BigDecimal percent = new BigDecimal(new Float(number) / 100);
+        return percent.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 }
