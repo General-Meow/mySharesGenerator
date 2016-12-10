@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ffa49b2-8407-4483-940a-ec952730d931" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/MainSwitch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhoang/Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhoang/data/CompanyData.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/data/CompanyData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhoang/data/ShareData.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/data/ShareData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config/companies.json" afterPath="$PROJECT_DIR$/src/main/resources/config/companies.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/words.txt" afterPath="$PROJECT_DIR$/words.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache" afterPath="$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" afterPath="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/home.mustache" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.mustache" />
     </list>
     <ignored path="mySharesGenerator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,11 +103,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="116" selection-start-line="56" selection-start-column="116" selection-end-line="56" selection-end-column="116" />
-              <folding>
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
-              </folding>
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,47 +190,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostGeneratedDataCommandTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/paulhoang/commands/PostGeneratedDataCommandTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1516#1517#0" expanded="false" />
-                <element signature="e#1556#1557#0" expanded="false" />
-                <element signature="e#1609#1610#0" expanded="false" />
-                <element signature="e#1649#1650#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="generate.mustache" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0">
-              <caret line="20" column="74" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="74" />
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generate-advanced.mustache" pinned="false" current-in-tab="false">
+      <file leaf-file-name="generate-advanced.mustache" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.46617916">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43137255">
-              <caret line="207" column="57" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
+            <state vertical-scroll-proportion="-6.259259">
+              <caret line="80" column="37" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.mustache" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.mustache">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="12" column="84" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -357,14 +356,34 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
               <folding>
-                <element signature="e#788#789#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#989#990#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
-                <element signature="e#1109#1110#0" expanded="true" />
+                <element signature="e#813#814#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1078#1079#0" expanded="true" />
+                <element signature="e#1134#1135#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1232#1233#0" expanded="true" />
+                <element signature="e#1264#1265#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainSwitch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/MainSwitch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <folding>
+                <element signature="e#389#390#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+                <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -373,8 +392,8 @@
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="44" />
+            <state vertical-scroll-proportion="-2.7777777">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -416,80 +435,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spark.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-core/2.3/99b3f92f15b266c30c5d43defdd4ed92f8dfe25e/spark-core-2.3-sources.jar!/spark/Spark.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="879" column="23" selection-start-line="879" selection-start-column="23" selection-end-line="879" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#33008#0" expanded="false" />
-                <element signature="e#1378#1379#0" expanded="false" />
-                <element signature="e#1425#1426#0" expanded="false" />
-                <element signature="e#1619#1620#0" expanded="false" />
-                <element signature="e#1665#1666#0" expanded="false" />
-                <element signature="e#1848#1849#0" expanded="false" />
-                <element signature="e#1895#1896#0" expanded="false" />
-                <element signature="e#2076#2077#0" expanded="false" />
-                <element signature="e#2122#2123#0" expanded="false" />
-                <element signature="e#2307#2308#0" expanded="false" />
-                <element signature="e#2355#2356#0" expanded="false" />
-                <element signature="e#2542#2543#0" expanded="false" />
-                <element signature="e#2591#2592#0" expanded="false" />
-                <element signature="e#2774#2775#0" expanded="false" />
-                <element signature="e#2821#2822#0" expanded="false" />
-                <element signature="e#3006#3007#0" expanded="false" />
-                <element signature="e#3054#3055#0" expanded="false" />
-                <element signature="e#3243#3244#0" expanded="false" />
-                <element signature="e#3293#3294#0" expanded="false" />
-                <element signature="e#3482#3483#0" expanded="false" />
-                <element signature="e#3532#3533#0" expanded="false" />
-                <element signature="e#3741#3742#0" expanded="false" />
-                <element signature="e#3791#3792#0" expanded="false" />
-                <element signature="e#3998#3999#0" expanded="false" />
-                <element signature="e#4047#4048#0" expanded="false" />
-                <element signature="e#4460#4461#0" expanded="false" />
-                <element signature="e#4518#4519#0" expanded="false" />
-                <element signature="e#5081#5082#0" expanded="false" />
-                <element signature="e#5139#5140#0" expanded="false" />
-                <element signature="e#7208#7209#0" expanded="false" />
-                <element signature="e#7252#7253#0" expanded="false" />
-                <element signature="e#7416#7417#0" expanded="false" />
-                <element signature="e#7459#7460#0" expanded="false" />
-                <element signature="e#24841#24842#0" expanded="false" />
-                <element signature="e#24877#24878#0" expanded="false" />
-                <element signature="e#25202#25203#0" expanded="false" />
-                <element signature="e#25244#25245#0" expanded="false" />
-                <element signature="e#25570#25571#0" expanded="false" />
-                <element signature="e#25610#25611#0" expanded="false" />
-                <element signature="e#26003#26004#0" expanded="false" />
-                <element signature="e#26051#26052#0" expanded="false" />
-                <element signature="e#26400#26401#0" expanded="false" />
-                <element signature="e#26453#26454#0" expanded="false" />
-                <element signature="e#26741#26742#0" expanded="false" />
-                <element signature="e#26791#26792#0" expanded="false" />
-                <element signature="e#27174#27175#0" expanded="false" />
-                <element signature="e#27217#27218#0" expanded="false" />
-                <element signature="e#27547#27548#0" expanded="false" />
-                <element signature="e#27587#27588#0" expanded="false" />
-                <element signature="e#30195#30196#0" expanded="false" />
-                <element signature="e#30247#30248#0" expanded="false" />
-                <element signature="e#30920#30921#0" expanded="false" />
-                <element signature="e#30976#30977#0" expanded="false" />
-                <element signature="e#31524#31525#0" expanded="false" />
-                <element signature="e#31575#31576#0" expanded="false" />
-                <element signature="e#31676#31677#0" expanded="false" />
-                <element signature="e#31712#31713#0" expanded="false" />
-                <element signature="e#32127#32128#0" expanded="false" />
-                <element signature="e#32181#32182#0" expanded="false" />
-                <element signature="e#32636#32637#0" expanded="false" />
-                <element signature="e#32672#32673#0" expanded="false" />
-                <element signature="e#32948#32949#0" expanded="false" />
-                <element signature="e#33004#33005#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1056,7 +1001,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/uk.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/jp.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/info.mustache" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/home.mustache" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/hystrix/HystrixDashboardStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/data/Data.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/paulhoang/commands/ExampleJavaConsumerPactTest.java" />
@@ -1066,21 +1010,23 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/hystrix/HystrixMetricsPoller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/data/Trend.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/application.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/jp.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/uk.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/us.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/data/PostData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/commands/PostGeneratedDataCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/companies.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/data/ShareData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/companies.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/data/CompanyData.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/home.mustache" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/MainSwitch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/paulhoang/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/generate.mustache" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache" />
       </list>
     </option>
   </component>
@@ -2096,7 +2042,7 @@
       <workItem from="1476388228082" duration="11079000" />
       <workItem from="1477080150313" duration="2699000" />
       <workItem from="1477862980505" duration="3041000" />
-      <workItem from="1481202523151" duration="9571000" />
+      <workItem from="1481202523151" duration="11260000" />
     </task>
     <servers />
   </component>
@@ -2133,7 +2079,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106135000" />
+    <option name="totallyTimeSpent" value="107824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
@@ -2145,7 +2091,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32368422" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118421" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5026316" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25609756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2195,20 +2141,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.4.7/467466f42be9d5bf1680cf71b5c4d31ad959dc36/groovy-all-2.4.7-sources.jar!/groovy/lang/Closure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-all-1.10.19-sources.jar!/org/mockito/internal/runners/JUnit44RunnerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runner/RunWith.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2612,22 +2544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0">
-          <caret line="20" column="74" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/uk.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2674,25 +2590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="116" selection-start-line="56" selection-start-column="116" selection-end-line="56" selection-end-column="116" />
-          <folding>
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/commands/PostGeneratedDataCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2708,21 +2605,6 @@
           <folding>
             <element signature="e#780#781#0" expanded="true" />
             <element signature="e#821#822#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#989#990#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1109#1110#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2854,10 +2736,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/MainSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/PostThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="12" column="84" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7777777">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/config/ApplicationConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <folding>
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1264#1265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhoang/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43137255">
-          <caret line="207" column="57" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
+        <state vertical-scroll-proportion="-6.259259">
+          <caret line="80" column="37" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/generate-advanced.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46617916">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding />
         </state>
       </provider>

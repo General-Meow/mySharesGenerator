@@ -15,10 +15,11 @@
     <header>
         <h1>Shares Generator {{country}}</h1>
         <h3>Generator status: derp</h3>
+        <h4> Click <a href="{{killPage}}">here</a> to kill</h4>
     </header>
 
     <div class="content">
-        <form class="pure-form pure-form-aligned" action="{{generateActionAdvanced}}" method="post">
+        <form class="pure-form pure-form-aligned" action="{{generateAction}}" method="post">
             <fieldset>
                 <div class="pure-control-group">
                     <label for="duration">Duration in minutes</label>
@@ -63,7 +64,7 @@
 
                 <div class="pure-control-group">
                     <label for="concurrentThreads">Concurrent Threads</label>
-                    <select id="concurrentThreads" name="concurrentThreads">
+                    <select id="concurrentThreads" name="concurrentThreads" disabled>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="5">5</option>

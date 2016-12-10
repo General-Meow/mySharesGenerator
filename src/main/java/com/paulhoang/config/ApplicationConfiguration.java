@@ -10,6 +10,7 @@ public class ApplicationConfiguration {
     private String applicationContext;
     private String generate;
     private String generateAdvanced;
+    private String kill;
 
     public String getProfile() {
         return profile;
@@ -49,5 +50,13 @@ public class ApplicationConfiguration {
 
     public void setGenerateAdvanced(String generateAdvanced) {
         this.generateAdvanced = generateAdvanced;
+    }
+
+    public String getKill() {
+        return kill;
+    }
+
+    public void setKill(String kill) {
+        this.kill = kill;
     }
 }

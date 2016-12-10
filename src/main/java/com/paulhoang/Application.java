@@ -42,10 +42,12 @@ public class Application {
     private static ApplicationConfiguration appConfig;
     private static List<CompanyData> companyData;
     private static Map<String, BigDecimal> lastCompanyPrices;
+    private static MainSwitch mainSwitch;
     private static final Type COMPANY_DATA_TYPE = new TypeToken<List<CompanyData>>() { }.getType();
 
     // home.mustache file is in resources/templates directory
-    //to get hystrix info go to: ~/Dropbox/dev/MySharesReborn/Hystrix/hystrix-dashboard
+
+    //to start up hystrix dashboard use the jettyRun gradle target in the main hystrix project
     //run ../gradlew jettyRun
     //point to http://localhost:5551/sharesUK/hystrix.stream
     private static final MustacheTemplateEngine mustacheTemplateEngine = new MustacheTemplateEngine();
@@ -66,22 +68,31 @@ public class Application {
             return null;
         });
 
+        mainSwitch = MainSwitch.getInstance();
         final Map<String, String> homePageMap = new HashMap<>();
         homePageMap.put("generatePage", appConfig.getGenerate());
+        homePageMap.put("generateAdvancedPage", appConfig.getGenerateAdvanced());
         get(appConfig.getApplicationContext(), (rq, rs) -> new ModelAndView(homePageMap, "home.mustache"), mustacheTemplateEngine);
 
         final Map<String, Object> generatePageMap = new HashMap<>();
         generatePageMap.put("country", appConfig.getProfile());
         generatePageMap.put("generateAction", appConfig.getGenerate());
         generatePageMap.put("generatorStatus", runningGeneration ? "Running" : "Not Running");
+        generatePageMap.put("killPage", appConfig.getKill());
 
         get(appConfig.getGenerate(), (rq, rs) -> new ModelAndView(generatePageMap, "generate.mustache"), mustacheTemplateEngine);
         post(appConfig.getGenerate(), (rq, rs) -> handleGenerateRequest(rq, rs));
+        get(appConfig.getKill(), (rq, rs) -> {
+            mainSwitch.killGenerate();
+            rs.redirect(appConfig.getApplicationContext());
+            return null;
+        });
 
         final Map<String, Object> generateAdvancedPageMap = new HashMap<>();
         generateAdvancedPageMap.put("country", appConfig.getProfile());
         generateAdvancedPageMap.put("generateAdvancedAction", appConfig.getGenerateAdvanced());
         generateAdvancedPageMap.put("generatorStatus", runningGeneration ? "Running" : "Not Running");
+        generateAdvancedPageMap.put("killPage", appConfig.getKill());
         get(appConfig.getGenerateAdvanced(), (rq, rs) -> new ModelAndView(generatePageMap, "generate-advanced.mustache"), mustacheTemplateEngine);
         post(appConfig.getGenerate(), (rq, rs) -> handleGenerateRequest(rq, rs));
 
@@ -205,7 +216,6 @@ public class Application {
                 newPrice = lastCompanyPrices.get(company.getName()).divide(percent, 2, BigDecimal.ROUND_HALF_UP);
             }
             newPrice = newPrice.setScale(2, RoundingMode.HALF_UP);
-            LOG.info("Prices: {} {} {}", percent, company.getStartingPrice(), newPrice);
             lastCompanyPrices.put(company.getName(), newPrice);
             final ShareData shareData = new ShareData(company.getName(), company.getName() + appConfig.getApplicationContext(), newPrice);
             data.add(shareData);

@@ -18,6 +18,7 @@ public class PostThread extends Thread {
     private static final Logger LOG = LoggerFactory.getLogger(PostThread.class);
 
     private List<PostData> postDataList;
+    private MainSwitch mainSwitch;
 
     /**
      * Provide a collection to iterator over
@@ -26,24 +27,27 @@ public class PostThread extends Thread {
     public PostThread(final List<PostData> postDataList)
     {
         this.postDataList = postDataList;
+        this.mainSwitch = MainSwitch.getInstance();
     }
 
     @Override
     public void run() {
         Application.runningGeneration = true;
         for(final PostData postData : postDataList) {
-            LOG.info("posting data from {} to {}", postData.getStartTime(), postData.getEndTime());
+            if(this.mainSwitch.getKill())
+            {
+                this.mainSwitch.resetSwitch();
+                break;
+            }
             boolean executed = false;
             do {
                 LocalDateTime now = LocalDateTime.now();
                 if (now.isAfter(postData.getStartTime()) && now.isBefore(postData.getEndTime())) {
-                    LOG.info("Running thread: {}", Thread.currentThread().getName());
                     sendData(postData);
                     executed = true;
                 }
 
                 if (now.isAfter(postData.getEndTime())) {
-                    LOG.info("cancelling thread");
                     executed = true;
                 }
             }
