@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Transparent Fork Web Design",
+    "startingPrice": "125.00",
+    "trend": "UP",
+    "trendFlipChance": "0.6"
+  },
+  {
+    "name": "yotz",
+    "startingPrice": "25.00",
+    "trend": "UP",
+    "trendFlipChance": "0.9"
+  },
+  {
+    "name": "hypojo",
+    "startingPrice": "1.22",
+    "trend": "UP",
+    "trendFlipChance": "0.2"
+  },
+  {
+    "name": "maril",
+    "startingPrice": "1.55",
+    "trend": "DOWN",
+    "trendFlipChance": "0.15"
+  },
+  {
+    "name": "quasidenim",
+    "startingPrice": "1.98",
+    "trend": "UP",
+    "trendFlipChance": "0.37"
+  },
+  {
+    "name": "Soloholding",
+    "startingPrice": "3.11",
+    "trend": "DOWN",
+    "trendFlipChance": "0.45"
+  },
+  {
+    "name": "Techizone",
+    "startingPrice": "1.66",
+    "trend": "UP",
+    "trendFlipChance": "0.05"
+  },
+  {
+    "name": "Zumjob",
+    "startingPrice": "2.50",
+    "trend": "DOWN",
+    "trendFlipChance": "0.5"
+  },
+  {
+    "name": "Blacklux",
+    "startingPrice": "4.22",
+    "trend": "DOWN",
+    "trendFlipChance": "0.43"
+  },
+  {
+    "name": "Bamcore",
+    "startingPrice": "3.21",
+    "trend": "UP",
+    "trendFlipChance": "0.39"
+  },
+  {
+    "name": "Ganzcan",
+    "startingPrice": "22.19",
+    "trend": "DOWN",
+    "trendFlipChance": "0.7"
+  },
+  {
+    "name": "Tranelectrics",
+    "startingPrice": "28.55",
+    "trend": "UP",
+    "trendFlipChance": "0.4"
+  },
+  {
+    "name": "Northwesttelephone Coop",
+    "startingPrice": "100.00",
+    "trend": "UP",
+    "trendFlipChance": "0.5"
+  },
+  {
+    "name": "Regional Growth Partnership",
+    "startingPrice": "110.11",
+    "trend": "UP",
+    "trendFlipChance": "0.69"
+  },
+  {
+    "name": "Degiulio Kitchen Design Inc",
+    "startingPrice": "102.22",
+    "trend": "DOWN",
+    "trendFlipChance": "0.6"
+  },
+  {
+    "name": "Paul Collins",
+    "startingPrice": "134.99",
+    "trend": "DOWN",
+    "trendFlipChance": "0.71"
+  },
+  {
+    "name": "Inhance Corporation",
+    "startingPrice": "53.55",
+    "trend": "UP",
+    "trendFlipChance": "0.34"
+  },
+  {
+    "name": "Texarkana National Bank-Central Plaza",
+    "startingPrice": "4.99",
+    "trend": "DOWN",
+    "trendFlipChance": "0.28"
+  },
+  {
+    "name": "First National Bank in Wheeler",
+    "startingPrice": "6.28",
+    "trend": "DOWN",
+    "trendFlipChance": "0.84"
+  },
+  {
+    "name": "Irwin Consulting",
+    "startingPrice": "5.87",
+    "trend": "UP",
+    "trendFlipChance": "0.12"
+  },
+  {
+    "name": "Buzz Enterprises",
+    "startingPrice": "1.29",
+    "trend": "UP",
+    "trendFlipChance": "0.08"
+  },
+  {
+    "name": "Boscoli Foods",
+    "startingPrice": "0.55",
+    "trend": "UP",
+    "trendFlipChance": "0.26"
+  },
+  {
+    "name": "Hooper Golf Club",
+    "startingPrice": "3.27",
+    "trend": "DOWN",
+    "trendFlipChance": "0.43"
+  },
+  {
+    "name": "AAM International Inc",
+    "startingPrice": "4.83",
+    "trend": "DOWN",
+    "trendFlipChance": "0.65"
+  },
+  {
+    "name": "Flash Delivery Inc",
+    "startingPrice": "4.38",
+    "trend": "DOWN",
+    "trendFlipChance": "0.75"
+  },
+  {
+    "name": "Here To There Movers",
+    "startingPrice": "5.11",
+    "trend": "DOWN",
+    "trendFlipChance": "0.41"
+  },
+  {
+    "name": "Orbit Courier Inc",
+    "startingPrice": "2.87",
+    "trend": "DOWN",
+    "trendFlipChance": "0.49"
+  },
+  {
+    "name": "Double D Express Inc",
+    "startingPrice": "2.17",
+    "trend": "UP",
+    "trendFlipChance": "0.73"
+  },
+  {
+    "name": "CNT Micro-Systems",
+    "startingPrice": "1.86",
+    "trend": "UP",
+    "trendFlipChance": "0.39"
+  },
+  {
+    "name": "Resources For Small Business",
+    "startingPrice": "2.69",
+    "trend": "UP",
+    "trendFlipChance": "0.58"
+  },
+  {
+    "name": "Comko Inc",
+    "startingPrice": "3.58",
+    "trend": "DOWN",
+    "trendFlipChance": "0.58"
+  },
+  {
+    "name": "David Michael Kennedy",
+    "startingPrice": "39.32",
+    "trend": "DOWN",
+    "trendFlipChance": "0.63"
+  },
+  {
+    "name": "Classic Solutions",
+    "startingPrice": "75.00",
+    "trend": "UP",
+    "trendFlipChance": "0.77"
+  },
+  {
+    "name": "Wallace Vacuum & Sewing Shalet",
+    "startingPrice": "37.32",
+    "trend": "DOWN",
+    "trendFlipChance": "0.59"
+  },
+  {
+    "name": "Mac Mouse Club",
+    "startingPrice": "58.07",
+    "trend": "DOWN",
+    "trendFlipChance": "0.24"
+  },
+  {
+    "name": "Home System",
+    "startingPrice": "9.72",
+    "trend": "UP",
+    "trendFlipChance": "0.43"
+  },
+  {
+    "name": "Gage Park Library",
+    "startingPrice": "7.77",
+    "trend": "UP",
+    "trendFlipChance": "0.81"
+  },
+  {
+    "name": "Knightvision",
+    "startingPrice": "4.22",
+    "trend": "DOWN",
+    "trendFlipChance": "0.42"
+  },
+  {
+    "name": "Blue Ridge Growers",
+    "startingPrice": "3.44",
+    "trend": "UP",
+    "trendFlipChance": "0.64"
+  }
+]
