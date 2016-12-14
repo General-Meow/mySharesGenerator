@@ -1,5 +1,5 @@
-FROM openjdk:8
-MAINTAINER Paul Hoang 2016-10-25
+FROM armv7/armhf-ubuntu
+MAINTAINER Paul Hoang 2016-12-12
 RUN ["mkdir", "-p", "/home/javaapp"]
 COPY ./build/libs/sharesGenerator.jar /home/javaapp/sharesGenerator.jar
 WORKDIR /home/javaapp
