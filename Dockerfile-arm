@@ -1,6 +1,5 @@
-FROM armv7/armhf-ubuntu
+FROM armv7/armhf-java8
 MAINTAINER Paul Hoang 2016-12-12
-RUN ["apt-get", "install", "openjdk-8-jre", "--no-install-recommends", "-y"]
 RUN ["mkdir", "-p", "/home/javaapp"]
 COPY ./build/libs/sharesGenerator.jar /home/javaapp/sharesGenerator.jar
 WORKDIR /home/javaapp
