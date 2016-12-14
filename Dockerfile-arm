@@ -1,5 +1,6 @@
 FROM armv7/armhf-ubuntu
 MAINTAINER Paul Hoang 2016-12-12
+RUN ["apt-get", "install", "oracle-java8-jdk"]
 RUN ["mkdir", "-p", "/home/javaapp"]
 COPY ./build/libs/sharesGenerator.jar /home/javaapp/sharesGenerator.jar
 WORKDIR /home/javaapp
