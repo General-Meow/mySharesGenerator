@@ -1,0 +1,5 @@
+profile: de
+port: 5554
+applicationContext: /sharesDE
+generate: /sharesDE/generate
+generateAdvanced: /sharesDE/generateAdvanced
