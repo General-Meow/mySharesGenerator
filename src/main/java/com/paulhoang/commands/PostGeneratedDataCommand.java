@@ -3,6 +3,7 @@ package com.paulhoang.commands;
 import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.paulhoang.Application;
 import com.paulhoang.config.ApplicationConfiguration;
 import com.paulhoang.data.ShareData;
 import com.squareup.okhttp.*;
@@ -37,7 +38,8 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
 
         RequestBody body = RequestBody.create(JSON, gson.toJson(shareData));
 
-        ApplicationConfiguration config = ApplicationConfiguration.getInstance();
+        ApplicationConfiguration config = Application.appConfig;
+        LOG.info("about to push to {}, {}", config.getPushEndpoint(), config.getProfile());
         Request request = new Request.Builder()
                 .url(config.getPushEndpoint())
                 .post(body)

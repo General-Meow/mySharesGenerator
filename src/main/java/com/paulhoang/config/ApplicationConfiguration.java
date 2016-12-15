@@ -15,20 +15,6 @@ public class ApplicationConfiguration {
     private String kill;
     private String pushEndpoint;
 
-    private static ApplicationConfiguration instance;
-
-    private ApplicationConfiguration() {
-
-    }
-
-    public static ApplicationConfiguration getInstance(){
-        if(instance == null)
-        {
-            instance = new ApplicationConfiguration();
-        }
-        return instance;
-    }
-
     public String getProfile() {
         return profile;
     }

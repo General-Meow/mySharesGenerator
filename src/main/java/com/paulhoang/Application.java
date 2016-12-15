@@ -38,9 +38,9 @@ import static spark.Spark.*;
 public class Application {
 
     final public static Logger LOG = LoggerFactory.getLogger(Application.class);
+    public static ApplicationConfiguration appConfig;
 
     private static HystrixCommandGroupKey commandGroupKey;
-    private static ApplicationConfiguration appConfig;
     private static List<CompanyData> companyData;
     private static Map<String, BigDecimal> lastCompanyPrices;
     private static MainSwitch mainSwitch;
