@@ -9,4 +9,3 @@ EXPOSE 5553
 EXPOSE 5554
 ENTRYPOINT ["java", "-jar", "sharesGenerator.jar"]
 CMD ["uk"]
-#CMD ["/bin/bash"]
