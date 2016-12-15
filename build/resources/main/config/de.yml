@@ -4,4 +4,4 @@ applicationContext: /sharesDE
 generate: /sharesDE/generate
 generateAdvanced: /sharesDE/generateAdvanced
 kill: /sharesDE/kill
-pushEndpoint: http://sharescollector/collect
+pushEndpoint: http://sharescollector:5555/collect
