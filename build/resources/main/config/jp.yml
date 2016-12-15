@@ -3,3 +3,5 @@ port: 5553
 applicationContext: /sharesJP
 generate: /sharesJP/generate
 generateAdvanced: /sharesJP/generateAdvanced
+kill: /sharesJP/kill
+pushEndpoint: http://sharescollector/collect

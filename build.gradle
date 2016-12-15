@@ -48,6 +48,7 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
     compile 'org.yaml:snakeyaml:1.16'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.orbitz.consul:consul-client:0.13.6'
 
     testCompile 'au.com.dius:pact-jvm-consumer_2.11:3.3.0'
     testCompile 'au.com.dius:pact-jvm-consumer-junit_2.11:3.3.0'

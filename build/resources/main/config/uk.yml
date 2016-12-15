@@ -3,3 +3,5 @@ port: 5551
 applicationContext: /sharesUK
 generate: /sharesUK/generate
 generateAdvanced: /sharesUK/generateAdvanced
+kill: /sharesUK/kill
+pushEndpoint: http://sharescollector/collect

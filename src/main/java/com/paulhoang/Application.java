@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.orbitz.consul.Consul;
 import com.paulhoang.config.ApplicationConfiguration;
 import com.paulhoang.data.CompanyData;
 import com.paulhoang.data.PostData;
@@ -61,6 +62,9 @@ public class Application {
         commandGroupKey = HystrixCommandGroupKey.Factory.asKey(appConfig.getProfile());
 
         port(appConfig.getPort());
+
+        //register this service with consul
+        //Consul consul = Consul.builder().build();
 
         //hystrix metrix endpoint
         get(appConfig.getApplicationContext() + "/hystrix.stream", (rq, rs) -> {

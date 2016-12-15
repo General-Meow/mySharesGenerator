@@ -4,3 +4,4 @@ applicationContext: /sharesUK
 generate: /sharesUK/generate
 generateAdvanced: /sharesUK/generateAdvanced
 kill: /sharesUK/kill
+pushEndpoint: http://sharescollector:5555/collect

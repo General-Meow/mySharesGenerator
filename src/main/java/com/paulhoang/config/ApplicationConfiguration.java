@@ -1,5 +1,7 @@
 package com.paulhoang.config;
 
+import com.paulhoang.Application;
+
 /**
  * Created by paul on 28/11/2015.
  */
@@ -11,6 +13,21 @@ public class ApplicationConfiguration {
     private String generate;
     private String generateAdvanced;
     private String kill;
+    private String pushEndpoint;
+
+    private static ApplicationConfiguration instance;
+
+    private ApplicationConfiguration() {
+
+    }
+
+    public static ApplicationConfiguration getInstance(){
+        if(instance == null)
+        {
+            instance = new ApplicationConfiguration();
+        }
+        return instance;
+    }
 
     public String getProfile() {
         return profile;
@@ -58,5 +75,13 @@ public class ApplicationConfiguration {
 
     public void setKill(String kill) {
         this.kill = kill;
+    }
+
+    public String getPushEndpoint() {
+        return pushEndpoint;
+    }
+
+    public void setPushEndpoint(String pushEndpoint) {
+        this.pushEndpoint = pushEndpoint;
     }
 }

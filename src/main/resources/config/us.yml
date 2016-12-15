@@ -3,3 +3,5 @@ port: 5552
 applicationContext: /sharesUS
 generate: /sharesUS/generate
 generateAdvanced: /sharesUS/generateAdvanced
+kill: /sharesUS/kill
+pushEndpoint: http://sharescollector:5555/collect

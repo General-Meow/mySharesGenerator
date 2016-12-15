@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.orbitz.consul:consul-client:0.13.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.orbitz.consul/consul-client/0.13.6/1073612d62e5d9d80a2f61fca4ec7d93437ee1fe/consul-client-0.13.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.orbitz.consul/consul-client/0.13.6/d9486c56717a87fbd8e37e3c39ebf51530cd6f55/consul-client-0.13.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
