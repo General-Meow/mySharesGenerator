@@ -1,0 +1,51 @@
+version: "2"
+
+services:
+  # vote:
+  #   build: ./vote
+  #   command: python app.py
+  #   volumes:
+  #    - ./vote:/app
+  #   ports:
+  #     - "5000:80"
+  sharescollector:
+    container_name: "sharescollector"
+    image: generalmeow/mysharescollector:1.0
+    ports:
+      - "5555:5555"
+  sharesuk:
+    container_name: "sharesuk"
+    image: generalmeow/mysharesgenerator:1.1
+    command:
+      - "uk"
+    ports:
+      - "5551:5551"
+    links:
+      - "sharescollector"
+  sharesus:
+    container_name: "sharesus"
+    image: generalmeow/mysharesgenerator:1.1
+    command:
+      - "us"
+    ports:
+      - "5552:5552"
+    links:
+      - "sharescollector"
+  sharesjp:
+    container_name: "sharesjp"
+    image: generalmeow/mysharesgenerator:1.1
+    command:
+      - "jp"
+    ports:
+      - "5553:5553"
+    links:
+      - "sharescollector"
+  sharesde:
+    container_name: "sharesde"
+    image: generalmeow/mysharesgenerator:1.1
+    command:
+      - "de"
+    ports:
+      - "5554:5554"
+    links:
+      - "sharescollector"
