@@ -1,11 +1,12 @@
 package com.paulhoang.data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Created by paul on 30/10/2016.
  */
-public class ShareData {
+public class ShareData implements Serializable{
     private String name;
     private String code;
     private BigDecimal price;

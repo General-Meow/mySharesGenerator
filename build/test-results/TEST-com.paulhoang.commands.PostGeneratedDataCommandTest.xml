@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.paulhoang.commands.PostGeneratedDataCommandTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-21T20:02:54" hostname="Pauls-MacBook-Pro-2.local" time="1.831">
+<testsuite name="com.paulhoang.commands.PostGeneratedDataCommandTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-12-29T15:42:17" hostname="Pauls-MacBook-Pro-2.local" time="1.438">
   <properties/>
-  <testcase name="testPact" classname="com.paulhoang.commands.PostGeneratedDataCommandTest" time="1.831"/>
+  <testcase name="testPact" classname="com.paulhoang.commands.PostGeneratedDataCommandTest" time="1.438"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
