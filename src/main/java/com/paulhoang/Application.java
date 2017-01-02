@@ -207,7 +207,7 @@ public class Application {
 
     private static List<ShareData> generateShareDataForCompanies(){
         final List<ShareData> data = new ArrayList<>();
-
+        final Date shareDateTime = new Date();
         for(final CompanyData company : companyData)
         {
             BigDecimal percent = randomPercentage(0, 5);
@@ -221,7 +221,7 @@ public class Application {
             }
             newPrice = newPrice.setScale(2, RoundingMode.HALF_UP);
             lastCompanyPrices.put(company.getName(), newPrice);
-            final ShareData shareData = new ShareData(company.getName(), company.getName() + appConfig.getApplicationContext(), newPrice);
+            final ShareData shareData = new ShareData(company.getName(), company.getName() + appConfig.getApplicationContext(), newPrice, shareDateTime);
             data.add(shareData);
         }
 
