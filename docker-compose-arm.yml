@@ -9,12 +9,12 @@ services:
   #     - "5000:80"
   sharescollector:
     container_name: "sharescollector"
-    image: "generalmeow/mysharescollector:1.1-arm"
+    image: ${COLLECTOR_IMAGE}-arm
     ports:
       - "5555:5555"
   sharesuk:
     container_name: "sharesuk"
-    image: ${GENERATORIMAGE}-arm
+    image: ${GENERATOR_IMAGE}-arm
     command:
       - "uk"
     ports:
@@ -23,7 +23,7 @@ services:
       - "sharescollector"
   sharesus:
     container_name: "sharesus"
-    image: ${GENERATORIMAGE}-arm
+    image: ${GENERATOR_IMAGE}-arm
     command:
       - "us"
     ports:
@@ -32,7 +32,7 @@ services:
       - "sharescollector"
   sharesjp:
     container_name: "sharesjp"
-    image: ${GENERATORIMAGE}-arm
+    image: ${GENERATOR_IMAGE}-arm
     command:
       - "jp"
     ports:
@@ -41,7 +41,7 @@ services:
       - "sharescollector"
   sharesde:
     container_name: "sharesde"
-    image: ${GENERATORIMAGE}-arm
+    image: ${GENERATOR_IMAGE}-arm
     command:
       - "de"
     ports:
