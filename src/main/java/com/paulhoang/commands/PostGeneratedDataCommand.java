@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.paulhoang.Application;
+import com.paulhoang.JsonService;
 import com.paulhoang.config.ApplicationConfiguration;
 import com.paulhoang.data.ShareData;
 import com.squareup.okhttp.*;
@@ -19,7 +20,7 @@ import java.util.List;
 public class PostGeneratedDataCommand extends HystrixCommand<String> {
 
     private static final Logger LOG = LoggerFactory.getLogger(PostGeneratedDataCommand.class);
-    private Gson gson = new Gson();
+    private static Gson gson = JsonService.getInstance().getGson();
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private List<ShareData> shareData;
@@ -35,14 +36,15 @@ public class PostGeneratedDataCommand extends HystrixCommand<String> {
     @Override
     protected String run()  {
         final OkHttpClient restfulClient = new OkHttpClient();
-
-        RequestBody body = RequestBody.create(JSON, gson.toJson(shareData));
+        final String body = gson.toJson(shareData);
+        LOG.info("created body {}", body);
+        RequestBody requestBody = RequestBody.create(JSON, body);
 
         ApplicationConfiguration config = Application.appConfig;
         LOG.info("about to push to {}, {}", config.getPushEndpoint(), config.getProfile());
         Request request = new Request.Builder()
                 .url(config.getPushEndpoint())
-                .post(body)
+                .post(requestBody)
                 .build();
         try {
             Response response = restfulClient.newCall(request).execute();
